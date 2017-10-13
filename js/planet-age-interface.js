@@ -21,7 +21,7 @@ $(document).ready(function() {
   $("#calculator").submit(function(event) {
     event.preventDefault();
     clearForm();
-    
+
     let birthString = $('#birthdate').val();
     if (birthString.length != 10) {
       $('.birthdate').addClass('has-error');
