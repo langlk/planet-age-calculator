@@ -15,5 +15,9 @@ describe('PlanetYearConverter', function() {
     it("converts seconds to Mars's years", function() {
       expect(converter.planetYears(31540000, 'Mars')).toEqual(0.530976430976431);
     });
+
+    it("converts seconds to Jupiter's years", function() {
+      expect(converter.planetYears(31540000, 'Jupiter')).toEqual(0.08524324324324324);
+    });
   });
 });
