@@ -1,53 +1,39 @@
 # Planet Age Calculator
 
-## Planning
-### Configuration/Dependencies
-* Gulp build tools
-  * Babel
-* Bower
-  * jQuery
-  * Bootstrap
-* Jasmine
-* Karma
-* Gulp serve tools
+### _Epicodus Project in JavaScript, October 13, 2017_
 
-### Specifications
+### By Kelsey Langlois
 
-* Program converts a person's age in years into seconds.
+## Description
+
+_This program calculates a user's age and life expectancy based on their birthdate, and gender, then converts both amounts into years on the following planets: Mercury, Venus, Earth, Mars, and Jupiter._
+
+## Specifications
+
+* Program converts Earth years into seconds.
 * Program takes two dates and determines the difference, in seconds, between them.
-* Program converts Earth years into Mercury years (1:0.24)
-* Program converts Earth years into Venus years (1:0.62)
-* Program converts Earth years into Mars years (1:1.88)
-* Program converts Earth years into Jupiter years (1:11.86)
-* Program determines a user's remaining life expectancy.
-* Program converts a user's remaining life expectancy different planetary years.
+* Program converts seconds into Mercury years.
+* Program converts seconds into Venus years.
+* Program converts seconds into Mars years.
+* Program converts seconds into Jupiter years
+* Program determines a user's remaining life expectancy based on their age and gender.
 * If user's age is past their life expectancy, program returns 1 Earth year as expected remaining.
+* Program converts a user's remaining life expectancy different planetary years.
 
-### Integration
+## Support and contact details
 
-* Homepage: index.html
-  * requires planet-age-calculator-interface.js
-  * requires all CSS
-  * interface:
-    * Form:
-      * Age / Birthday
-      * Gender
-    * Display:
-      * Age in each planet's years
-      * Remaining life expectancy in each planet's years
-* JS:
-  * planet-year-converter.js
-  * age-calculator.js
-  * planet-age-calculator-interface.js
-* CSS:
-  * Bootstrap
-  * Custom
+_Please contact [kels.langlois@gmail.com](mailto:kels.langlois@gmail.com) with questions, comments, or issues._
 
-### UX/UI
+## Technologies Used
 
-* Custom styling
+* JavaScript
+* jQuery
+* Bootstrap
+* Node.js
+* Jasmine/Karma
 
-### Polish
+### License
 
-* Refactor if needed
-* Edit README
+Copyright (c) 2017 **Kelsey Langlois**
+
+*This software is licensed under the MIT license.*
