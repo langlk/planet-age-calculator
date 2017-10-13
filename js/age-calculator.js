@@ -8,4 +8,8 @@ export class AgeCalculator {
   dateDifference(start, end) {
     return (end - start) / 1000;
   }
+
+  getAge(birthdate) {
+    return this.dateDifference(birthdate, Date.now());
+  }
 }

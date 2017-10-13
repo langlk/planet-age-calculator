@@ -24,4 +24,15 @@ describe('AgeCalculator', function() {
       expect(ageCalc.dateDifference(start, end)).toEqual(789004800);
     });
   });
+
+  describe('getAge', function() {
+    it("returns current age in seconds, based on birthdate given", function() {
+      let birthdate = new Date(1992, 1, 1);
+      let expectedOne = (Date.now() - birthdate) / 1000;
+      let result = ageCalc.getAge(birthdate);
+      let expectedTwo = (Date.now() - birthdate) / 1000;
+      expect(result).toBeGreaterThanOrEqual(expectedOne);
+      expect(result).toBeLessThanOrEqual(expectedTwo);
+    });
+  });
 });
