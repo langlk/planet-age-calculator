@@ -8,6 +8,9 @@
 
 _This program calculates a user's age and life expectancy based on their birthdate, and gender, then converts both amounts into years on the following planets: Mercury, Venus, Earth, Mars, and Jupiter._
 
+## Setup/Installation Requirements
+
+
 ## Specifications
 
 * Program converts Earth years into seconds.
@@ -21,7 +24,7 @@ _This program calculates a user's age and life expectancy based on their birthda
 * If user's age is past their life expectancy, program returns 1 Earth year as expected remaining.
 * Program converts a user's remaining life expectancy different planetary years.
 
-## Future Functionality
+## Planned Functionality (Not yet complete)
 
 * Program converts to remaining Planets' years (Saturn, Uranus, Neptune).
 * Program incorporates more information into calculating life expectancy.
