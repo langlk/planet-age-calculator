@@ -10,6 +10,15 @@ _This program calculates a user's age and life expectancy based on their birthda
 
 ## Setup/Installation Requirements
 
+_This app can be viewed online at [langlk.github.io/planet-age-calculator](https://langlk.github.io/planet-age-calculator/). To install on your own machine, follow the steps below._
+
+* Clone this repository.
+* Open index.html in your web browser.
+* To run on a development server:
+  * After cloning the repo, run ```npm install``` in the root directory.
+  * Then, run ```bower install```.
+  * After that, run ```gulp serve```.
+  * The site will now be running at ```localhost:3000```
 
 ## Specifications
 
