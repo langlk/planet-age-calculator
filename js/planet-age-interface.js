@@ -6,6 +6,13 @@ $(document).ready(function() {
   const planetConverter = new PlanetYearConverter();
   const planets = ['Mercury', 'Venus', 'Earth', 'Mars', 'Jupiter'];
 
+  planets.forEach(function(planet) {
+    let yearConversion = planetConverter.planetYears(31540000, planet);
+    $('.output').append(`<h3>${ planet }</h3>
+      <p><strong>Ratio to Earth Years:</strong> ${ yearConversion.toFixed(2) } to 1.00</p>
+      <div class= ${ planet }></div>`);
+  });
+
   $("#calculator").submit(function(event) {
     event.preventDefault();
     let birthString = $('#birthdate').val();
@@ -14,14 +21,14 @@ $(document).ready(function() {
     let birthDay = parseInt(birthString.substring(8, 10));
     let birthdate = new Date(birthYear, birthMonth, birthDay);
     let gender = $('#gender').val();
-    $(".output").html('');
 
     let age = ageCalc.getAge(birthdate);
     let expectancy = ageCalc.lifeExpectancy(age, gender);
     planets.forEach(function(planet) {
-      $('.output').append("<h3>" + planet + "</h3>");
-      $('.output').append(`<p><strong>Age:</strong> ${planetConverter.planetYears(age, planet).toFixed(2)}</p>`);
-      $('.output').append(`<p><strong>Estimated Years Left:</strong> ${planetConverter.planetYears(expectancy, planet).toFixed(2)}</p>`);
+      let planetAge = planetConverter.planetYears(age, planet);
+      let planetEstimate = planetConverter.planetYears(expectancy, planet);
+      $('.' + planet).append(`<p><strong>Age:</strong> ${ planetAge.toFixed(2) }</p>`);
+      $('.' + planet).append(`<p><strong>Estimated Years Left:</strong> ${ planetEstimate.toFixed(2) }</p>`);
     });
   });
 });
