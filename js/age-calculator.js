@@ -15,6 +15,11 @@ export class AgeCalculator {
 
   lifeExpectancy(age, gender) {
     const expectancies = { 'female': 2293136620, 'male': 2156389940 }
-    return expectancies[gender.toLowerCase()] - age;
+    let remaining = expectancies[gender.toLowerCase()] - age;
+    if (remaining > 0) {
+      return remaining;
+    } else {
+      return 31540000;
+    }
   }
 }

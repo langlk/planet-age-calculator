@@ -38,5 +38,10 @@ describe('AgeCalculator', function() {
       expect(ageCalc.lifeExpectancy(age, 'female')).toEqual(1504131820);
       expect(ageCalc.lifeExpectancy(age, 'male')).toEqual(1367385140);
     });
+
+    it("returns 1 earth year remaining if age is past expectancy", function() {
+      let age = 2299136620;
+      expect(ageCalc.lifeExpectancy(age, 'male')).toEqual(31540000);
+    });
   });
 });
