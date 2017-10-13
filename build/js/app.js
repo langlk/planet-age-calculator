@@ -132,6 +132,8 @@ $(document).ready(function () {
         planets.forEach(function (planet) {
           var planetAge = planetConverter.planetYears(age, planet);
           var planetEstimate = planetConverter.planetYears(expectancy, planet);
+
+          $('.' + planet).text("");
           $('.' + planet).append('<p><strong>Age:</strong> ' + planetAge.toFixed(2) + '</p>');
           $('.' + planet).append('<p><strong>Estimated Years Left:</strong> ' + planetEstimate.toFixed(2) + '</p>');
         });
