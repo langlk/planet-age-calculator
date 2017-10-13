@@ -89,7 +89,7 @@ var _planetYearConverter = require('./../js/planet-year-converter.js');
 $(document).ready(function () {
   var ageCalc = new _ageCalculator.AgeCalculator();
   var planetConverter = new _planetYearConverter.PlanetYearConverter();
-  var planets = ['mercury', 'venus', 'earth', 'mars', 'jupiter'];
+  var planets = ['Mercury', 'Venus', 'Earth', 'Mars', 'Jupiter'];
 
   $("#calculator").submit(function (event) {
     event.preventDefault();
@@ -99,14 +99,14 @@ $(document).ready(function () {
     var birthDay = parseInt(birthString.substring(8, 10));
     var birthdate = new Date(birthYear, birthMonth, birthDay);
     var gender = $('#gender').val();
-    $(".output").html('<p>' + birthdate + '</p><p>' + gender + '</p>');
+    $(".output").html('');
 
     var age = ageCalc.getAge(birthdate);
     var expectancy = ageCalc.lifeExpectancy(age, gender);
     planets.forEach(function (planet) {
-      $('.output').append("<p>" + planet + "</p>");
-      $('.output').append('<p>age: ' + planetConverter.planetYears(age, planet) + "</p>");
-      $('.output').append('<p>expectancy: ' + planetConverter.planetYears(expectancy, planet) + "</p>");
+      $('.output').append("<h3>" + planet + "</h3>");
+      $('.output').append('<p><strong>Age:</strong> ' + planetConverter.planetYears(age, planet).toFixed(2) + '</p>');
+      $('.output').append('<p><strong>Estimated Years Left:</strong> ' + planetConverter.planetYears(expectancy, planet).toFixed(2) + '</p>');
     });
   });
 });
