@@ -17,8 +17,14 @@ _This program calculates a user's age and life expectancy based on their birthda
 * Program converts seconds into Mars years.
 * Program converts seconds into Jupiter years
 * Program determines a user's remaining life expectancy based on their age and gender.
+* Program returns average life expectancy if user does not specify a gender.
 * If user's age is past their life expectancy, program returns 1 Earth year as expected remaining.
 * Program converts a user's remaining life expectancy different planetary years.
+
+## Future Functionality
+
+* Program converts to remaining Planets' years (Saturn, Uranus, Neptune).
+* Program incorporates more information into calculating life expectancy.
 
 ## Support and contact details
 
