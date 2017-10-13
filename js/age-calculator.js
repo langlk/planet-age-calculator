@@ -12,4 +12,9 @@ export class AgeCalculator {
   getAge(birthdate) {
     return this.dateDifference(birthdate, Date.now());
   }
+
+  lifeExpectancy(age, gender) {
+    const expectancies = { 'female': 2293136620, 'male': 2156389940 }
+    return expectancies[gender.toLowerCase()] - age;
+  }
 }

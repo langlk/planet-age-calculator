@@ -1,11 +1,7 @@
 import { AgeCalculator } from './../js/age-calculator.js';
 
 describe('AgeCalculator', function() {
-  let ageCalc;
-
-  beforeEach(function() {
-    ageCalc = new AgeCalculator();
-  });
+  let ageCalc = new AgeCalculator();
 
   describe('yearsToSeconds', function() {
     it("should return 0 if years inputted is 0", function() {
@@ -33,6 +29,14 @@ describe('AgeCalculator', function() {
       let expectedTwo = (Date.now() - birthdate) / 1000;
       expect(result).toBeGreaterThanOrEqual(expectedOne);
       expect(result).toBeLessThanOrEqual(expectedTwo);
+    });
+  });
+
+  describe('lifeExpectancy', function() {
+    it("returns remaining life expectancy based on gender", function() {
+      let age = 789004800;
+      expect(ageCalc.lifeExpectancy(age, 'female')).toEqual(1504131820);
+      expect(ageCalc.lifeExpectancy(age, 'male')).toEqual(1367385140);
     });
   });
 });

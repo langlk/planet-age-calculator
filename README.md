@@ -19,8 +19,7 @@
 * Program converts Earth years into Venus years (1:0.62)
 * Program converts Earth years into Mars years (1:1.88)
 * Program converts Earth years into Jupiter years (1:11.86)
-* Program determines a user's life expectancy.
-* Program determines a user's remaining life expectancy
+* Program determines a user's remaining life expectancy.
 * Program converts a user's remaining life expectancy different planetary years.
 * If user's age is past their life expectancy, program returns 1 Earth year as expected remaining.
 
