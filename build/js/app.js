@@ -89,7 +89,7 @@ var _planetYearConverter = require('./../js/planet-year-converter.js');
 $(document).ready(function () {
   var ageCalc = new _ageCalculator.AgeCalculator();
   var planetConverter = new _planetYearConverter.PlanetYearConverter();
-  var planets = ['mercury', 'venus', 'mars', 'jupiter'];
+  var planets = ['mercury', 'venus', 'earth', 'mars', 'jupiter'];
 
   $("#calculator").submit(function (event) {
     event.preventDefault();

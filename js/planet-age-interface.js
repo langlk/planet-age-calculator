@@ -4,7 +4,7 @@ import { PlanetYearConverter } from './../js/planet-year-converter.js';
 $(document).ready(function() {
   const ageCalc = new AgeCalculator();
   const planetConverter = new PlanetYearConverter();
-  const planets = ['mercury', 'venus', 'mars', 'jupiter'];
+  const planets = ['mercury', 'venus', 'earth', 'mars', 'jupiter'];
 
   $("#calculator").submit(function(event) {
     event.preventDefault();
