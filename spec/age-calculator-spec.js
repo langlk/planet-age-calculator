@@ -48,5 +48,10 @@ describe('AgeCalculator', function() {
       let age = 2299136620;
       expect(ageCalc.lifeExpectancy(age, 'male')).toEqual(31540000);
     });
+
+    it("uses average life expectancy if no gender specified", function() {
+      let age = 789004800;
+      expect(ageCalc.lifeExpectancy(age)).toEqual(1465795200);
+    });
   });
 });

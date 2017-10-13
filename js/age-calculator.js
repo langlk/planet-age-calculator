@@ -17,8 +17,8 @@ export class AgeCalculator {
     }
   }
 
-  lifeExpectancy(age, gender) {
-    const expectancies = { 'female': 2293136620, 'male': 2156389940 };
+  lifeExpectancy(age, gender='average') {
+    const expectancies = { 'average': 2254800000, 'female': 2293136620, 'male': 2156389940 };
     let remaining = expectancies[gender.toLowerCase()] - age;
     if (remaining > 0) {
       return remaining;

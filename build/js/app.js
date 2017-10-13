@@ -37,8 +37,10 @@ var AgeCalculator = exports.AgeCalculator = function () {
     }
   }, {
     key: 'lifeExpectancy',
-    value: function lifeExpectancy(age, gender) {
-      var expectancies = { 'female': 2293136620, 'male': 2156389940 };
+    value: function lifeExpectancy(age) {
+      var gender = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'average';
+
+      var expectancies = { 'average': 2254800000, 'female': 2293136620, 'male': 2156389940 };
       var remaining = expectancies[gender.toLowerCase()] - age;
       if (remaining > 0) {
         return remaining;
