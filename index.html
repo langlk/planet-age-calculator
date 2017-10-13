@@ -16,12 +16,15 @@
         <div class="col-sm-6">
           <h2>Enter Your Information:</h2>
           <form id="calculator">
-            <div class="form-group">
+            <div class="form-group birthdate">
               <label for="birthdate" class="control-label">Birth Date:</label>
-              <input id="birthdate" type="date" name="birthdate" class="form-control">
+              <input id="birthdate" type="date" name="birthdate" class="form-control" aria-describedby="birthdate-error">
+              <span id="birthdate-error" class="help-block">
+
+              </span>
             </div>
 
-            <div class="form-group">
+            <div class="form-group gender">
               <label for="gender" class="control-label">Gender:</label>
               <select id="gender" class="form-control" name="gender">
                 <option value="female">Female</option>

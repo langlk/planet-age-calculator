@@ -11,7 +11,7 @@ export class AgeCalculator {
   getAge(birthdate) {
     let age = this.dateDifference(birthdate, Date.now());
     if (age < 0)  {
-      return "Error: birthdate cannot be in future."
+      return "Error: Birthdate cannot be in future."
     } else {
       return age;
     }

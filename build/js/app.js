@@ -30,7 +30,7 @@ var AgeCalculator = exports.AgeCalculator = function () {
     value: function getAge(birthdate) {
       var age = this.dateDifference(birthdate, Date.now());
       if (age < 0) {
-        return "Error: birthdate cannot be in future.";
+        return "Error: Birthdate cannot be in future.";
       } else {
         return age;
       }
@@ -91,6 +91,11 @@ var _ageCalculator = require('./../js/age-calculator.js');
 
 var _planetYearConverter = require('./../js/planet-year-converter.js');
 
+function clearForm() {
+  $('.form-group').removeClass('has-error');
+  $('#birthdate-error').text('');
+}
+
 $(document).ready(function () {
   var ageCalc = new _ageCalculator.AgeCalculator();
   var planetConverter = new _planetYearConverter.PlanetYearConverter();
@@ -103,21 +108,33 @@ $(document).ready(function () {
 
   $("#calculator").submit(function (event) {
     event.preventDefault();
-    var birthString = $('#birthdate').val();
-    var birthYear = parseInt(birthString.substring(0, 4));
-    var birthMonth = parseInt(birthString.substring(5, 7));
-    var birthDay = parseInt(birthString.substring(8, 10));
-    var birthdate = new Date(birthYear, birthMonth, birthDay);
-    var gender = $('#gender').val();
+    clearForm();
 
-    var age = ageCalc.getAge(birthdate);
-    var expectancy = ageCalc.lifeExpectancy(age, gender);
-    planets.forEach(function (planet) {
-      var planetAge = planetConverter.planetYears(age, planet);
-      var planetEstimate = planetConverter.planetYears(expectancy, planet);
-      $('.' + planet).append('<p><strong>Age:</strong> ' + planetAge.toFixed(2) + '</p>');
-      $('.' + planet).append('<p><strong>Estimated Years Left:</strong> ' + planetEstimate.toFixed(2) + '</p>');
-    });
+    var birthString = $('#birthdate').val();
+    if (birthString.length != 10) {
+      $('.birthdate').addClass('has-error');
+      $('#birthdate-error').text('Error: Birthdate cannot be empty.');
+    } else {
+      var birthYear = parseInt(birthString.substring(0, 4));
+      var birthMonth = parseInt(birthString.substring(5, 7));
+      var birthDay = parseInt(birthString.substring(8, 10));
+      var birthdate = new Date(birthYear, birthMonth, birthDay);
+      var gender = $('#gender').val();
+
+      var age = ageCalc.getAge(birthdate);
+      if (age === "Error: Birthdate cannot be in future.") {
+        $('.birthdate').addClass('has-error');
+        $('#birthdate-error').text(age);
+      } else {
+        var expectancy = ageCalc.lifeExpectancy(age, gender);
+        planets.forEach(function (planet) {
+          var planetAge = planetConverter.planetYears(age, planet);
+          var planetEstimate = planetConverter.planetYears(expectancy, planet);
+          $('.' + planet).append('<p><strong>Age:</strong> ' + planetAge.toFixed(2) + '</p>');
+          $('.' + planet).append('<p><strong>Estimated Years Left:</strong> ' + planetEstimate.toFixed(2) + '</p>');
+        });
+      }
+    }
   });
 });
 

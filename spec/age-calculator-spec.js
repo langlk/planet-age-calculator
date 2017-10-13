@@ -33,7 +33,7 @@ describe('AgeCalculator', function() {
 
     it("returns error message if birthday after current date", function() {
       let birthdate = new Date(2020, 1, 1);
-      expect(ageCalc.getAge(birthdate)).toEqual("Error: birthdate cannot be in future.");
+      expect(ageCalc.getAge(birthdate)).toEqual("Error: Birthdate cannot be in future.");
     });
   });
 
