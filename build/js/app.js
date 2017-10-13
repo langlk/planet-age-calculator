@@ -86,6 +86,10 @@ var _ageCalculator = require('./../js/age-calculator.js');
 var _planetYearConverter = require('./../js/planet-year-converter.js');
 
 $(document).ready(function () {
+  var ageCalc = new _ageCalculator.AgeCalculator();
+  var planetConverter = new _planetYearConverter.PlanetYearConverter();
+  var planets = ['mercury', 'venus', 'mars', 'jupiter'];
+
   $("#calculator").submit(function (event) {
     event.preventDefault();
     var birthString = $('#birthdate').val();
@@ -95,6 +99,14 @@ $(document).ready(function () {
     var birthdate = new Date(birthYear, birthMonth, birthDay);
     var gender = $('#gender').val();
     $(".output").html('<p>' + birthdate + '</p><p>' + gender + '</p>');
+
+    var age = ageCalc.getAge(birthdate);
+    var expectancy = ageCalc.lifeExpectancy(age, gender);
+    planets.forEach(function (planet) {
+      $('.output').append("<p>" + planet + "</p>");
+      $('.output').append('<p>age: ' + planetConverter.planetYears(age, planet) + "</p>");
+      $('.output').append('<p>expectancy: ' + planetConverter.planetYears(expectancy, planet) + "</p>");
+    });
   });
 });
 
