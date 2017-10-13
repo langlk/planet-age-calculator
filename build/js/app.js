@@ -28,7 +28,12 @@ var AgeCalculator = exports.AgeCalculator = function () {
   }, {
     key: 'getAge',
     value: function getAge(birthdate) {
-      return this.dateDifference(birthdate, Date.now());
+      var age = this.dateDifference(birthdate, Date.now());
+      if (age < 0) {
+        return "Error: birthdate cannot be in future.";
+      } else {
+        return age;
+      }
     }
   }, {
     key: 'lifeExpectancy',

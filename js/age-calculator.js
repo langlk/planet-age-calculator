@@ -9,7 +9,12 @@ export class AgeCalculator {
   }
 
   getAge(birthdate) {
-    return this.dateDifference(birthdate, Date.now());
+    let age = this.dateDifference(birthdate, Date.now());
+    if (age < 0)  {
+      return "Error: birthdate cannot be in future."
+    } else {
+      return age;
+    }
   }
 
   lifeExpectancy(age, gender) {
